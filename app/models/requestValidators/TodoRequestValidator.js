@@ -18,7 +18,7 @@ class TodoRequestValidator {
         }),
       todo: Joi.string()
         .required()
-        .min(3)
+        .min(2)
         .messages({
           "string.min": `${userActionConstant.TODO} ${userActionConstant.SHOULD_HAVE} at least {#limit} characters. ${userActionConstant.PROVIDE_VALID_DATA}`,
           "string.empty": `${userActionConstant.TODO} ${userActionConstant.IS_EMPTY} ${userActionConstant.PROVIDE_VALID_DATA}`,

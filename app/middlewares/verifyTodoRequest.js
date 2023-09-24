@@ -21,9 +21,9 @@ const verifyTodoRequest = async (req, res, next) => {
     if (dataIsInvalid) {
       const generatedResponse = responseBuilder(feedbackMessage);
       return res.status(statusCodeConstant.INVALID).send(generatedResponse);
+    } else {
+      next();
     }
-
-    next();
   } catch (error) {
     const generatedResponse = responseBuilder(
       serverConstant.ERROR_OCCURRED_WHILE_VERIFYING
